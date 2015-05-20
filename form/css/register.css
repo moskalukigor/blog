@@ -1,7 +1,7 @@
 * { box-sizing: border-box }
 
 html{
-    background: url("http://blog.me:81/media/images/background.png") no-repeat center center fixed;
+    background: url("http://blog.me:80/media/images/background.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

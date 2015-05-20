@@ -1,7 +1,7 @@
 * { box-sizing: border-box }
 
 html{
-    background: url("http://blog.me:81/media/images/background.png") no-repeat center center fixed;
+    background: url("http://blog.me:80/media/images/background.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -19,57 +19,6 @@ html{
   text-transform: uppercase;
   font-family: "Bebas Neue", Arial;
   color: #fff;
-}
-.formIndex {
-  height: 20%;
-  width: 99%;
-  top: 1%;
-  position: fixed;
-  font-family: "Bebas Neue", Arial;
-  color: #fff;
-}
-.formIndex > div {
-  height: 2.25em;
-  width: 10%;
-}
-.hr
-{
-    margin: 6%;
-}
-
-.LoginButton
-{
-    vertical-align: top;
-    position: absolute;
-    margin-left: 50%;
-    margin-top: -5%;
-}
-.RegisterButton
-{
-    vertical-align: top;
-    position: absolute;
-    margin-left: 70%;
-    margin-top: -6.15%;
-}
-.LogOutButton
-{
-    vertical-align: top;
-    position: absolute;
-    margin-left: 70%;
-    margin-top: -7%;
-}
-.nameUser{
-    vertical-align: top;
-    position: absolute;
-    margin-left: 70%;
-    margin-top: -2%;
-}
-
-.Title
-{
-    text-align: left;
-    margin-left: 20%;
-    color: #404241;
 }
 
 .form > div {
