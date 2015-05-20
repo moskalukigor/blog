@@ -1,0 +1,44 @@
+@import url("http://fonts.googleapis.com/css?family=Lato");
+
+
+inputArea, textarea {
+  display: block;
+  clear: both;
+  width: 450px;
+  margin-bottom: 10px;
+  padding: 15px 10px;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  background-color: #2c3e50;
+  color: #aabdd1;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  
+}
+textarea{
+    opacity: 0.2;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #476481;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #476481;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #476481;
+}
+input:hover, textarea:hover {
+  background-color: #233140;
+  color: #3e5771;
+}
+input:focus, textarea:focus {
+  background-color: #1a242f;
+  color: #507192;
+}
+
+textarea {
+  height: 150px;
+}
