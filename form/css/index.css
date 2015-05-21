@@ -21,19 +21,32 @@ html{
   width: 10%;
 }
 
-input {
-  font-size: 30px;
-  text-align:center;
-  outline: 0;
-  color: #fff;
-  background: transparent;
-  border:0.033em #fff solid;
-  font-family: "Bebas Neue", Arial;
+input[type="submit"]
+{
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    margin: 0 auto;
+    background: #1abc9c;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"]:hover
+{
+    position: relative;
+    background: #109177;
 }
 
 .tableHead
 {
-    margin-top: 3%;
+    margin-top: 1%;
     margin-right: 7%;
 }
 
@@ -42,15 +55,7 @@ input {
     margin: 6%;
 }
 
-textarea {
-  height:auto;
-  font-size:10px;
-  font-family:'Ubuntu', Helvetica, Arial, sans-serif;
-  border-radius:3px;
-  border:none;
-  max-width:900px;
-  min-width:900px;
-}
+
 #theme
 {
   max-height:6%;
@@ -70,4 +75,11 @@ textarea {
 .newPost
 {
     margin-left: 6%;
+}
+
+.AllPost
+{
+    position: absolute;
+    margin-left: 55%;
+    margin-top: -29.3%;
 }

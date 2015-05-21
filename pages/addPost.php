@@ -32,3 +32,6 @@ $postsData = [$_SESSION['user_id'], $themePost, $textPost];
 $sql = "INSERT INTO `posts`(`OwnerID`, `PostTitle`, `PostText`) VALUES (?, ?, ?)";
 $query = $connection->prepare($sql);
 $query->execute($postsData);
+
+
+header("location: http://blog.me:80/form/index.php");

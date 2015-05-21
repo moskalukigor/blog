@@ -3,17 +3,22 @@ session_start();
 require_once '../common.php';
 
 $userName;
-if(isset($_SESSION['user_id']))
-{
     $dbuser = 'root';
     $dbpass = '';
     $connection = new PDO('mysql:dbname=blog;host=localhost',$dbuser,$dbpass);
+if(isset($_SESSION['user_id']))
+{
     $sql = "select * from users where UserID=?";
     $query = $connection->prepare($sql);
     $query->execute(array($_SESSION['user_id']));
     $rows = $query->fetchAll(PDO::FETCH_ASSOC);
     $userName = $rows[0]['UserName'];
 }   
+
+    $sql = "select * from posts";
+    $query = $connection->prepare($sql);
+    $query->execute();
+    $posts = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <html>
@@ -63,9 +68,24 @@ if(isset($_SESSION['user_id']))
         <form action="/pages/addPost.php" method="post">
             <textarea name="titlePost" id="theme" placeholder="Title!"></textarea>
             <textarea name="textPost" id="word" placeholder="Text!"></textarea>
-            <input type="submit" value="AddPost"/>
+            <input id="btnAdPost" type="submit" value="AddPost"/>
         </div>
-    </form>>
+        </form>
+            
+            
+        <div class="AllPost">
+            <table>
+                <?php
+                    foreach($posts as $i)
+                    {
+                        echo "<tr><th><text><h2>{$i['PostTitle']}</h2></text></th></tr>";
+                        echo "<tr><th><text>{$i['PostText']}<br><br><br><br></text></th></tr>";
+                    }
+               ?>
+            </table>
+        </div> 
+            
+    
 
 </body>
 </html>

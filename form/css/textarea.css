@@ -22,6 +22,26 @@ inputArea
 {
     margin-left: 10px;
 }
+textarea
+{
+    max-width:900px;
+    min-width:900px;
+}
+
+input#btnAdPost
+{
+    background: #de8d77;
+    border: 1px solid coral;
+    position: absolute;
+    width: 20%;
+}
+input#btnAdPost:hover
+{
+    background: #deeb90;
+    border: 1px solid coral;
+    position: absolute;
+    width: 20%;
+}
 
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #476481;
