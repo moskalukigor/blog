@@ -1,7 +1,6 @@
 <?php
 require_once '../common.php';
 session_start();
-
 if(isset($_SESSION['user_id']))
 {
     header("location: http://blog.me:81/form/AllPostForm.php");

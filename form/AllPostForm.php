@@ -1,5 +1,6 @@
 <?php
  include_once 'index.php';
+ header('Content-Type: text/html; charset=utf-8');
  
 $userNames = array();
 

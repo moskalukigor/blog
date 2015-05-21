@@ -2,7 +2,6 @@
 require_once '../common.php';
 session_start();
 
-
 if(empty($_POST))
 {
    p("<a href = '/form/loginForm.php'>Back</a>");

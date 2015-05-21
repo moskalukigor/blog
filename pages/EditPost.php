@@ -2,7 +2,6 @@
 
 require_once '../common.php';
 session_start();
-
 if(!isset($_SESSION['user_id']))
 {
     p("<a href = '/form/AllPostForm.php'>Back</a>");
