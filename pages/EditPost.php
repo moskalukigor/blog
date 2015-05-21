@@ -2,6 +2,7 @@
 
 require_once '../common.php';
 session_start();
+
 if(!isset($_SESSION['user_id']))
 {
     p("<a href = '/form/AllPostForm.php'>Back</a>");
@@ -19,7 +20,7 @@ if(empty($_POST['titlePost']) || empty($_POST['textPost']))
         die("Title or text is empty");       
     }
     
-$themePost = $_POST['titlePost'];
+$titlePost = $_POST['titlePost'];
 $textPost = $_POST['textPost'];
 
 $dbuser = 'root';
@@ -27,9 +28,9 @@ $dbpass = '';
 $connection = new PDO('mysql:dbname=blog;host=localhost',$dbuser,$dbpass);
 
 
-$postsData = [$themePost, $textPost, $_SESSION['user_id']];
+$postsData = [$titlePost, $textPost, $_POST['PostID']];
 
-$sql = "INSERT INTO `posts`(`PostTitle`, `PostText`, `OwnerID`) VALUES (?, ?, ?)";
+$sql = "UPDATE `posts` SET PostTitle=? , PostText=? WHERE PostID=?";
 $query = $connection->prepare($sql);
 $query->execute($postsData);
 

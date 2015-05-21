@@ -4,7 +4,7 @@ session_start();
 
 if(isset($_SESSION['user_id']))
 {
-    header("location: http://blog.me:81/form/index.php");
+    header("location: http://blog.me:81/form/AllPostForm.php");
 }
 
 if(empty($_POST))
@@ -69,7 +69,7 @@ $userID = $connection->lastInsertId();
     //cookie
     
     setcookie("auth_key",$auth_key);
-    header("location: http://blog.me:81/form/index.php");
+    header("location: http://blog.me:81/form/AllPostForm.php");
 
 
 

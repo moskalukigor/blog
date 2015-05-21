@@ -6,6 +6,7 @@ $userName;
     $dbuser = 'root';
     $dbpass = '';
     $connection = new PDO('mysql:dbname=blog;host=localhost',$dbuser,$dbpass);
+    
 if(isset($_SESSION['user_id']))
 {
     $sql = "select * from users where UserID=?";
@@ -15,7 +16,7 @@ if(isset($_SESSION['user_id']))
     $userName = $rows[0]['UserName'];
 }   
 
-    $sql = "select * from posts";
+    $sql = "select * from posts LIMIT 0,10";
     $query = $connection->prepare($sql);
     $query->execute();
     $posts = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -29,9 +30,11 @@ if(isset($_SESSION['user_id']))
 <body>
      
         <div class="formIndex">
-            <table class="tableHead" align="left" style="margin-left: 7%">
+            <table class="tableHead" align="left" style="margin-left: 7%;">
                           <tr>
                               <th><h1 name="Title">Blog.me</h1></th>      
+                              <th><form action="NewPostForm.php" method="get"><input type="submit" class="indexButton" value="NewPost"/></form></th> 
+                              <th><form action="AllPostForm.php" method="get"><input type="submit" class="indexButton" value="AllPost"/></form></th> 
                           </tr>
             </table>
             <?php
@@ -40,8 +43,8 @@ if(isset($_SESSION['user_id']))
                     ?>
                         <table class="tableHead" align="right">
                           <tr>
-                              <th><form action="loginForm.php" method="get"><input type="submit" value="login"/></form></th>
-                              <th><form action="registerForm.php" method="get"><input type="submit" value="register"/></form></th>      
+                              <th><form action="loginForm.php" method="get"><input type="submit" class="indexButton" value="login"/></form></th>
+                              <th><form action="registerForm.php" method="get"><input type="submit" class="indexButton" value="register"/></form></th>      
                           </tr>
                         </table>
                     <?php
@@ -52,40 +55,13 @@ if(isset($_SESSION['user_id']))
                     <table class="tableHead" align="right">
                           <tr>
                               <th><?php p("<h1>$userName</h1>")?></th>      
-                              <th><form action="../pages/logout.php" method="get"><input type="submit" value="logout"/></form></th>
+                              <th><form action="../pages/logout.php" method="get"><input class="indexButton" id="LOGOUT" type="submit" value="logout"/></form></th>
                           </tr>
                     </table>
                         <?php
                 }
- 
             ?>
         </div>
     <hr class="hr">
-    
-    
-        <div class="newPost">
-            <h1>New Post</h1>
-        <form action="/pages/addPost.php" method="post">
-            <textarea name="titlePost" id="theme" placeholder="Title!"></textarea>
-            <textarea name="textPost" id="word" placeholder="Text!"></textarea>
-            <input id="btnAdPost" type="submit" value="AddPost"/>
-        </div>
-        </form>
-            
-            
-        <div class="AllPost">
-            <table>
-                <?php
-                    foreach($posts as $i)
-                    {
-                        echo "<tr><th><text><h2>{$i['PostTitle']}</h2></text></th></tr>";
-                        echo "<tr><th><text>{$i['PostText']}<br><br><br><br></text></th></tr>";
-                    }
-               ?>
-            </table>
-        </div> 
-            
-    
-
 </body>
 </html>

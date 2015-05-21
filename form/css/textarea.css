@@ -11,7 +11,7 @@ inputArea, textarea {
   outline: none;
   border: none;
   background-color: transparent;
-  color: #aabdd1;
+  color: #891177;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   -webkit-transition: all 0.2s ease-in;
@@ -24,8 +24,8 @@ inputArea
 }
 textarea
 {
-    max-width:900px;
-    min-width:900px;
+    max-width:80%;
+    min-width:80%;
 }
 
 input#btnAdPost
@@ -43,23 +43,38 @@ input#btnAdPost:hover
     width: 20%;
 }
 
+input#btnEditPost
+{
+    background: #de8d77;
+    border: 1px solid coral;
+    position: absolute;
+    width: 20%;
+}
+input#btnEditPost:hover
+{
+    background: #deeb90;
+    border: 1px solid coral;
+    position: absolute;
+    width: 20%;
+}
+
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: #476481;
+    color: #46073d;
 }
 input::-moz-placeholder, textarea::-moz-placeholder {
-  color: #476481;
+  color: #46073d;
 }
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: #476481;
+  color: #46073d;
 }
 input:hover, textarea:hover {
   background-color: transparent;
-  color: #3e5771;
+  color: #46073d;
   border: solid #aabdd1 1px;
 }
 input:focus, textarea:focus {
   background-color: transparent;
-  color: #507192;
+  color: #46073d;
   border: solid #aabdd1 1px;
 }
 

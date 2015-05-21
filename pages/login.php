@@ -49,7 +49,7 @@ $sql = "UPDATE users SET auth_key='$auth_key' WHERE username='$username'";
 $query = $connection->prepare($sql);
 $query->execute();
 
-header("location: http://blog.me:80/form/index.php");
+header("location: http://blog.me:81/form/AllPostForm.php");
 
 
 
